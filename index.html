@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>✨</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <header>
+    <h1>My Personal Portfolio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Personal Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="gallery.html">Image Gallery</a>
+      <a href="contact.html">Contact Me</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/profile.jpg" alt="Profile Picture">
+    <div class="hero-text">
+      <h2>Hello, I'm Maryam Sheraz</h2>
+      <p>Software Engineer ✨ Photographer ✨ Traveller</p>
+      <a href="#about" class="button">Explore My World</a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+  <h2>About Me</h2>
+  <div class="about-card">
+    <p id="typed-text"></p> <!-- Typing effect will appear here -->
+  </div>
+
+  <!-- Skill Tags -->
+  <div class="skill-tags">
+    <span>C++</span>
+    <span>Java</span>
+    <span>SQL</span>
+    <span>Python</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Kali Linux</span>
+    <span>Penetration Testing</span>
+  </div>
+
+  <!-- Quote -->
+  <p class="about-quote">“Coding is my way of turning ideas into reality.”</p>
+</section>
+
+
+  <footer>
+    <p>© 2025 Maryam Sheraz | All Rights Reserved</p>
+  </footer>
+
+  <script>
+const textLines = [
+  "I’m a Software Engineering student at the National University of Science and Technology with a strong foundation in C++, Java, SQL, and working knowledge of Python, HTML, and CSS.",
+  "I explored cybersecurity through an internship, gaining hands-on experience with Kali Linux and penetration testing.",
+  "I enjoy building projects that combine functionality, problem-solving, and security."
+];
+
+const typedText = document.getElementById('typed-text');
+let lineIndex = 0;
+let charIndex = 0;
+
+function typeLine() {
+  if (lineIndex < textLines.length) {
+    if (charIndex < textLines[lineIndex].length) {
+      typedText.innerHTML += textLines[lineIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeLine, 30); // typing speed
+    } else {
+      typedText.innerHTML += "\n\n"; // space between lines
+      lineIndex++;
+      charIndex = 0;
+      setTimeout(typeLine, 300); // pause before next line
+    }
+  }
+}
+
+// Trigger typing when card is visible
+const aboutCard = document.querySelector('.about-card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      aboutCard.classList.add('show');
+      typeLine(); // start typing
+    }
+  });
+}, { threshold: 0.2 });
+
+observer.observe(aboutCard);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio - Hobbies</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>✨</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <header>
+    <h1>My Hobbies</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Personal Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="gallery.html">Image Gallery</a>
+      <a href="contact.html">Contact Me</a>
+    </nav>
+  </header>
+
+  <section class="hobby-section">
+    <img src="images/hobby1.jpg" alt="Photography">
+    <div>
+      <h2>Photography</h2>
+      <p>Capturing moments through my lens is one of my passions.</p>
+    </div>
+  </section>
+
+  <section class="hobby-section">
+    <img src="images/hobby2.jpg" alt="Traveling">
+    <div>
+      <h2>Traveling</h2>
+      <p>I love exploring new places and cultures.</p>
+    </div>
+  </section>
+
+  <section class="hobby-section">
+    <img src="images/hobby3.jpg" alt="Cooking">
+    <div>
+      <h2>Cooking</h2>
+      <p>I enjoy experimenting with flavors and creating fusion recipes.</p>
+    </div>
+  </section>
+
+  <section class="hobby-section">
+    <img src="images/hobby4.jpg" alt="Book Reading">
+    <div>
+      <h2>Book Reading</h2>
+      <p>Diving into novels and stories is my favorite escape.</p>
+    </div>
+  </section>
+
+  <section class="hobby-section">
+    <img src="images/hobby5.jpg" alt="Journaling">
+    <div>
+      <h2>Journaling</h2>
+      <p>I love reflecting on my day and expressing thoughts creatively.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Maryam Sheraz | All Rights Reserved</p>
+  </footer>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const paragraphs = document.querySelectorAll(".hobby-section p");
+
+  const typeWriter = (element) => {
+    const text = element.textContent;
+    element.textContent = "";
+    element.style.opacity = 1; // fade in when typing starts
+    let i = 0;
+    const interval = setInterval(() => {
+      element.textContent += text.charAt(i);
+      i++;
+      if (i >= text.length) {
+        clearInterval(interval);
+      }
+    }, 40); // typing speed (ms per character)
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        typeWriter(entry.target);
+        observer.unobserve(entry.target); // trigger only once
+      }
+    });
+  }, { threshold: 0.2 });
+
+  paragraphs.forEach(p => observer.observe(p));
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio - Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>✨</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <header>
+    <h1>My Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Personal Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="gallery.html">Image Gallery</a>
+      <a href="contact.html">Contact Me</a>
+    </nav>
+  </header>
+
+  <!-- Project 1 -->
+  <section class="hobby-section">
+    <img src="images/db.jpg" alt="ServeSpace">
+    <div>
+      <h2>ServeSpace - Volunteer Management System</h2>
+      <p>Web-based platform using Django and SQL to streamline volunteer coordination between organizations, volunteers, and admins.</p>
+    </div>
+  </section>
+
+  <!-- Project 2 -->
+  <section class="hobby-section">
+    <img src="images/dsa.png" alt="NewsLinker">
+    <div>
+      <h2>NewsLinker - Search Engine for News Articles</h2>
+      <p>Built with Python, this efficient news search engine features voice input and delivers fast, relevant article results.</p>
+    </div>
+  </section>
+
+  <!-- Project 3 -->
+  <section class="hobby-section">
+    <img src="images/oop.jpg" alt="Vigilantia">
+    <div>
+      <h2>Vigilantia - Security Management System</h2>
+      <p>Java-based GUI application for residential security with QR scanning, supporting residents, management, and security personnel.</p>
+    </div>
+  </section>
+
+  <!-- Project 4 -->
+  <section class="hobby-section">
+    <img src="images/daa.png" alt="Disease Spread Simulation">
+    <div>
+      <h2>Disease Spread Simulation – Social Network Graph</h2>
+      <p>Simulated disease transmission across a social network using Python, visualizing infection dynamics through graph-based modeling.</p>
+    </div>
+  </section>
+
+  <!-- Project 5 -->
+  <section class="hobby-section">
+    <img src="images/focp.png" alt="Space Adventure">
+    <div>
+      <h2>Space Adventure – Console-Based C++ Game</h2>
+      <p>Developed a C++ text-interactive game featuring rockets and asteroids, combining gameplay mechanics with console-based storytelling.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Maryam Sheraz | All Rights Reserved</p>
+  </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const paragraphs = document.querySelectorAll(".hobby-section p");
+
+    const typeWriter = (element) => {
+      const text = element.textContent;
+      element.textContent = "";
+      element.style.opacity = 1;
+      let i = 0;
+      const interval = setInterval(() => {
+        element.textContent += text.charAt(i);
+        i++;
+        if (i >= text.length) {
+          clearInterval(interval);
+        }
+      }, 35);
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          typeWriter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    paragraphs.forEach(p => observer.observe(p));
+  });
+  </script>
+</body>
+</html>

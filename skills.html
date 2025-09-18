@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio - Skills</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>✨</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <header>
+    <h1>My Skills</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Personal Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="gallery.html">Image Gallery</a>
+      <a href="contact.html">Contact Me</a>
+    </nav>
+  </header>
+<section class="skills">
+    <div class="skill-item">
+    <h3>C++</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 85%;"></div>
+    </div>
+  </div>
+
+  <div class="skill-item">
+    <h3>Java</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 80%;"></div>
+    </div>
+  </div>
+
+  <div class="skill-item">
+    <h3>Data Handling</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 80%;"></div>
+    </div>
+  </div>
+
+  <div class="skill-item">
+    <h3>Problem-solving</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 85%;"></div>
+    </div>
+  </div>
+
+  <div class="skill-item">
+    <h3>HTML/CSS</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 75%;"></div>
+    </div>
+  </div>
+
+  <div class="skill-item">
+    <h3>Penetration Testing</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 65%;"></div>
+    </div>
+  </div>
+
+  <div class="skill-item">
+    <h3>Front-end</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 65%;"></div>
+    </div>
+  </div>
+
+  <div class="skill-item">
+    <h3>Python</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 60%;"></div>
+    </div>
+  </div>
+
+  <div class="skill-item">
+    <h3>Software Architecture</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 80%;"></div>
+    </div>
+  </div>
+
+  <div class="skill-item">
+    <h3>Security Best Practices</h3>
+    <div class="level-bar">
+      <div class="level" style="width: 60%;"></div>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2025 Maryam Sheraz | All Rights Reserved</p>
+  </footer>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth <= 768) { // mobile only
+    const skills = document.querySelectorAll(".skill-card");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Stagger effect: each skill animates with a delay
+          skills.forEach((skill, index) => {
+            if (skill === entry.target) {
+              setTimeout(() => {
+                skill.classList.add("visible");
+              }, index * 300); // delay for each card
+            }
+          });
+        }
+      });
+    }, { threshold: 0.1 });
+
+    skills.forEach(skill => observer.observe(skill));
+  }
+});
+</script>
+
+
+</body>
+</html>
