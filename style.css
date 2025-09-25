@@ -438,6 +438,8 @@ nav a:hover {
   border-radius: 20px;
   margin-right: 40px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  float: left;   
+  clear: none; 
 }
 
 .hobby-section:nth-child(even) {
@@ -487,12 +489,14 @@ nav a:hover {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 40px;
+  clear: both;
 }
 .gallery img {
   width: 100%;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: transform 0.3s;
+  float: left;
 }
 .gallery img:hover {
   transform: scale(1.05);
@@ -800,4 +804,5 @@ html {
     margin: 3px;
   }
 }
+
 
