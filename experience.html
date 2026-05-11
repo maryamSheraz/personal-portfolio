@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maryam's Portfolio - Experience</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='90' font-size='90'>✨</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <h1>My Experience</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Personal Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="contact.html">Contact Me</a>
+    </nav>
+  </header>
+
+  <section class="experience">
+    <div class="exp-card">
+      <div class="exp-header">
+        <h2>Software Developer Intern</h2>
+        <span class="exp-place">Capsule Labs <span class="exp-type">(Remote)</span></span>
+      </div>
+      <div class="exp-details">
+        <span class="exp-duration">August 2024 (1 month)</span>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-header">
+        <h2>Penetration Tester Intern</h2>
+        <span class="exp-place">NASTP <span class="exp-type">(On-site)</span></span>
+      </div>
+      <div class="exp-details">
+        <span class="exp-duration">July 2025 - August 2025</span>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-header">
+        <h2>AI Research Intern</h2>
+        <span class="exp-place">Data Science and Machine Learning Lab, SINES <span class="exp-type">(On-site)</span></span>
+      </div>
+      <div class="exp-details">
+        <span class="exp-duration">October 2025 - Present</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Maryam Sheraz | All Rights Reserved</p>
+  </footer>
+
+  <script>
+  // Optional: Add fade-in or animation if desired
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll('.exp-card');
+    cards.forEach((card, i) => {
+      setTimeout(() => card.classList.add('visible'), i * 180);
+    });
+  });
+  </script>
+</body>
+</html>
